@@ -4,15 +4,15 @@ module.exports = function check(str, bracketsConfig) {
     strBrackets = strBrackets.replace(/ /g, '').replace(/\'/g, '');
     strBracketsLength = strBrackets.length;
 
-    console.log("strBrackets = " + strBrackets);
-    console.log("strBracketsLength = " + strBracketsLength);
+    // console.log("strBrackets = " + strBrackets);
+    // console.log("strBracketsLength = " + strBracketsLength);
 
     //----------------------//
     //--- Config Section ---//
     //----------------------//
 
     var strConfInit = bracketsConfig;
-    var strConf = strConfInit.replace(/ /g, '');
+    var strConf = strConfInit.toString().replace(/ /g, '');
     strConfArray = strConf.replace('[[\'', '').replace('\']]', '').replace(/\],\[/g, ',').replace(/\'/g, '').split(",");
     strConfArrayLength = strConfArray.length;
     numberOfBracketsTypes = strConfArrayLength / 2;
@@ -105,4 +105,4 @@ module.exports = function check(str, bracketsConfig) {
         console.log("Result: false");
         return false;
     }
-}
+};
